@@ -55,7 +55,7 @@ class Rating(models.Model):
     service = models.OneToOneField(Service, on_delete=models.CASCADE, related_name='rating')
     stars = models.PositiveSmallIntegerField(choices=[(i, i) for i in range(1, 6)])
     comment = models.TextField(blank=True)
-    rated_by = models.ForeignKey(User, on_delete=models.CASCADE)
+    rated_by = models.ForeignKey(User, on_delete=models.CASCADE, related_name='ratings_given')
     created_at = models.DateTimeField(auto_now_add=True)
     
     def __str__(self):
