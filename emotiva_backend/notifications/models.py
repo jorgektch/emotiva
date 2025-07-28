@@ -11,6 +11,8 @@ class Notification(models.Model):
     
     class Meta:
         ordering = ['-created_at']
+        verbose_name = "Notificación"
+        verbose_name_plural = "Notificaciones"
     
     def __str__(self):
         return f"Notificación para {self.user.email} - {self.message[:50]}..."

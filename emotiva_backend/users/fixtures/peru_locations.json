@@ -1,0 +1,228 @@
+[
+  {
+    "model": "users.country",
+    "pk": 1,
+    "fields": { "name": "Perú" }
+  },
+  {
+    "model": "users.city",
+    "pk": 1,
+    "fields": { "name": "Lima", "country": 1 }
+  },
+
+  {
+    "model": "users.district",
+    "pk": 1,
+    "fields": { "name": "Ancón", "city": 1 }
+  },
+  {
+    "model": "users.district",
+    "pk": 2,
+    "fields": { "name": "Ate", "city": 1 }
+  },
+  {
+    "model": "users.district",
+    "pk": 3,
+    "fields": { "name": "Barranco", "city": 1 }
+  },
+  {
+    "model": "users.district",
+    "pk": 4,
+    "fields": { "name": "Breña", "city": 1 }
+  },
+  {
+    "model": "users.district",
+    "pk": 5,
+    "fields": { "name": "Carabayllo", "city": 1 }
+  },
+  {
+    "model": "users.district",
+    "pk": 6,
+    "fields": { "name": "Chaclacayo", "city": 1 }
+  },
+  {
+    "model": "users.district",
+    "pk": 7,
+    "fields": { "name": "Chorrillos", "city": 1 }
+  },
+  {
+    "model": "users.district",
+    "pk": 8,
+    "fields": { "name": "Cieneguilla", "city": 1 }
+  },
+  {
+    "model": "users.district",
+    "pk": 9,
+    "fields": { "name": "Comas", "city": 1 }
+  },
+  {
+    "model": "users.district",
+    "pk": 10,
+    "fields": { "name": "El Agustino", "city": 1 }
+  },
+  {
+    "model": "users.district",
+    "pk": 11,
+    "fields": { "name": "Independencia", "city": 1 }
+  },
+  {
+    "model": "users.district",
+    "pk": 12,
+    "fields": { "name": "Jesús María", "city": 1 }
+  },
+  {
+    "model": "users.district",
+    "pk": 13,
+    "fields": { "name": "La Molina", "city": 1 }
+  },
+  {
+    "model": "users.district",
+    "pk": 14,
+    "fields": { "name": "La Victoria", "city": 1 }
+  },
+  {
+    "model": "users.district",
+    "pk": 15,
+    "fields": { "name": "Lima", "city": 1 }
+  },
+  {
+    "model": "users.district",
+    "pk": 16,
+    "fields": { "name": "Lince", "city": 1 }
+  },
+  {
+    "model": "users.district",
+    "pk": 17,
+    "fields": { "name": "Los Olivos", "city": 1 }
+  },
+  {
+    "model": "users.district",
+    "pk": 18,
+    "fields": { "name": "Lurigancho‑Chosica", "city": 1 }
+  },
+  {
+    "model": "users.district",
+    "pk": 19,
+    "fields": { "name": "Lurín", "city": 1 }
+  },
+  {
+    "model": "users.district",
+    "pk": 20,
+    "fields": { "name": "Magdalena del Mar", "city": 1 }
+  },
+  {
+    "model": "users.district",
+    "pk": 21,
+    "fields": { "name": "Miraflores", "city": 1 }
+  },
+  {
+    "model": "users.district",
+    "pk": 22,
+    "fields": { "name": "Pachacámac", "city": 1 }
+  },
+  {
+    "model": "users.district",
+    "pk": 23,
+    "fields": { "name": "Pucusana", "city": 1 }
+  },
+  {
+    "model": "users.district",
+    "pk": 24,
+    "fields": { "name": "Pueblo Libre", "city": 1 }
+  },
+  {
+    "model": "users.district",
+    "pk": 25,
+    "fields": { "name": "Puente Piedra", "city": 1 }
+  },
+  {
+    "model": "users.district",
+    "pk": 26,
+    "fields": { "name": "Punta Hermosa", "city": 1 }
+  },
+  {
+    "model": "users.district",
+    "pk": 27,
+    "fields": { "name": "Punta Negra", "city": 1 }
+  },
+  {
+    "model": "users.district",
+    "pk": 28,
+    "fields": { "name": "Rímac", "city": 1 }
+  },
+  {
+    "model": "users.district",
+    "pk": 29,
+    "fields": { "name": "San Bartolo", "city": 1 }
+  },
+  {
+    "model": "users.district",
+    "pk": 30,
+    "fields": { "name": "San Borja", "city": 1 }
+  },
+  {
+    "model": "users.district",
+    "pk": 31,
+    "fields": { "name": "San Isidro", "city": 1 }
+  },
+  {
+    "model": "users.district",
+    "pk": 32,
+    "fields": { "name": "San Juan de Lurigancho", "city": 1 }
+  },
+  {
+    "model": "users.district",
+    "pk": 33,
+    "fields": { "name": "San Juan de Miraflores", "city": 1 }
+  },
+  {
+    "model": "users.district",
+    "pk": 34,
+    "fields": { "name": "San Luis", "city": 1 }
+  },
+  {
+    "model": "users.district",
+    "pk": 35,
+    "fields": { "name": "San Martín de Porres", "city": 1 }
+  },
+  {
+    "model": "users.district",
+    "pk": 36,
+    "fields": { "name": "San Miguel", "city": 1 }
+  },
+  {
+    "model": "users.district",
+    "pk": 37,
+    "fields": { "name": "Santa Anita", "city": 1 }
+  },
+  {
+    "model": "users.district",
+    "pk": 38,
+    "fields": { "name": "Santa María del Mar", "city": 1 }
+  },
+  {
+    "model": "users.district",
+    "pk": 39,
+    "fields": { "name": "Santa Rosa", "city": 1 }
+  },
+  {
+    "model": "users.district",
+    "pk": 40,
+    "fields": { "name": "Santiago de Surco", "city": 1 }
+  },
+  {
+    "model": "users.district",
+    "pk": 41,
+    "fields": { "name": "Surquillo", "city": 1 }
+  },
+  {
+    "model": "users.district",
+    "pk": 42,
+    "fields": { "name": "Villa El Salvador", "city": 1 }
+  },
+  {
+    "model": "users.district",
+    "pk": 43,
+    "fields": { "name": "Villa María del Triunfo", "city": 1 }
+  }
+]

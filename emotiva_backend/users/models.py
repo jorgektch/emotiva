@@ -56,10 +56,44 @@ class User(AbstractUser):
     def __str__(self):
         return f"{self.get_full_name()} ({self.email})"
 
+class Country(models.Model):
+    name = models.CharField('País', max_length=100, unique=True)
+
+    class Meta:
+        verbose_name = 'País'
+        verbose_name_plural = 'Países'
+
+    def __str__(self):
+        return self.name
+
+class City(models.Model):
+    name = models.CharField('Ciudad', max_length=100)
+    country = models.ForeignKey(Country, on_delete=models.CASCADE, related_name='cities')
+
+    class Meta:
+        unique_together = ('name', 'country')
+        verbose_name = 'Ciudad'
+        verbose_name_plural = 'Ciudades'
+
+    def __str__(self):
+        return f"{self.name}, {self.country.name}"
+
+class District(models.Model):
+    name = models.CharField('Distrito', max_length=100)
+    city = models.ForeignKey(City, on_delete=models.CASCADE, related_name='districts')
+
+    class Meta:
+        unique_together = ('name', 'city')
+        verbose_name = 'Distrito'
+        verbose_name_plural = 'Distritos'
+
+    def __str__(self):
+        return f"{self.name}, {self.city.name}"
+
 class Client(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
     address = models.TextField(blank=True, null=True)
-    district = models.CharField(max_length=100, blank=True, null=True)
+    district = models.ForeignKey(District, on_delete=models.SET_NULL, null=True, blank=True, related_name='clients')
 
     class Meta:
         verbose_name = 'Cliente'
@@ -71,7 +105,7 @@ class Client(models.Model):
 class Collaborator(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
     is_verified = models.BooleanField(default=False)
-    districts_coverage = models.ManyToManyField('District', related_name='collaborators')
+    districts_coverage = models.ManyToManyField(District, verbose_name='Distritos de cobertura', related_name='collaborators')
 
     class Meta:
         verbose_name = 'Colaborador'
@@ -79,13 +113,7 @@ class Collaborator(models.Model):
 
     def __str__(self):
         return f"Colaborador: {self.user.get_full_name()}"
-
-class District(models.Model):
-    name = models.CharField(max_length=100, unique=True)
-
-    def __str__(self):
-        return self.name
-
+    
 class Document(models.Model):
     DOCUMENT_TYPES = (
         ('DNI', 'Documento Nacional de Identidad'),
@@ -98,6 +126,10 @@ class Document(models.Model):
     document_type = models.CharField(max_length=50, choices=DOCUMENT_TYPES)
     file = models.FileField(upload_to='documents/')
     uploaded_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        verbose_name = 'Documento'
+        verbose_name_plural = 'Documentos'
 
     def __str__(self):
         return f"{self.get_document_type_display()} - {self.collaborator.user.get_full_name()}"
