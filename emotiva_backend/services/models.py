@@ -4,6 +4,11 @@ from users.models import User, Client, Collaborator, District
 class ServiceType(models.Model):
     name = models.CharField("Nombre", max_length=50, unique=True)
     description = models.TextField("Descripción", blank=True)
+    icon = models.ImageField("Ícono (PNG)", upload_to='service_icons/', null=True, blank=True)
+
+    photo1 = models.ImageField("Foto 1", upload_to='service_photos/', null=True, blank=True)
+    photo2 = models.ImageField("Foto 2", upload_to='service_photos/', null=True, blank=True)
+    photo3 = models.ImageField("Foto 3", upload_to='service_photos/', null=True, blank=True)
 
     class Meta:
         verbose_name = "Tipo de Servicio"

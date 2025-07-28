@@ -17,6 +17,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework_simplejwt.views import TokenRefreshView
+from django.conf import settings
+from django.conf.urls.static import static
 from users.views import (
     CustomTokenObtainPairView,
     ClientRegisterView,
@@ -60,4 +62,4 @@ urlpatterns = [
     # Notificaciones
     path('api/notifications/', NotificationListView.as_view(), name='notification_list'),
     path('api/notifications/<int:pk>/mark-as-read/', MarkAsReadView.as_view(), name='mark_as_read'),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
